@@ -25,16 +25,13 @@
  @keyframes flip{
     from{ transform:rotate(0deg) ;}
     to{transform:rotate(10deg);
-    /* box-shadow: 0 0 15px rgba(249, 147, 13, 0.8), 0 0 30px rgba(249, 252, 252, 0.5);} */
  }}
 
 .restful {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap; 
-  /* gap: 20px; 
-  margin: 20px ;  */
-  /* width: 600px; */
+ 
 }
 
 .restful2 {
