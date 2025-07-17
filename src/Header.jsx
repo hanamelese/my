@@ -4,6 +4,7 @@ import camera2 from "./assets/camera3.jpg";
 
 const Header = () => {
   const [spinning, setSpinning] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false); // <-- new state
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -14,19 +15,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header
-      style={{
-        position: "fixed",
-        width: "100%",
-        backgroundColor: "black",
-        zIndex: 999,
-        top: 0,
-        padding: "10px 20px",
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-      }}
-    >
+    <header>
       {/* Logo Section */}
       <div style={{ display: "flex", alignItems: "center" }}>
         <img
@@ -47,50 +36,25 @@ const Header = () => {
         </div>
       </div>
 
+      {/* Burger button */}
+      <div className="burger" onClick={() => setMenuOpen(!menuOpen)}>
+        <div className={menuOpen ? "line rotate1" : "line"}></div>
+        <div className={menuOpen ? "line fade" : "line"}></div>
+        <div className={menuOpen ? "line rotate2" : "line"}></div>
+      </div>
+
       {/* Navigation Links */}
-      <nav className="link" style={{ display: "flex", gap: "20px" }}>
-        <a
-          href="#home"
-          className="header Home"
-          style={{
-            fontFamily: "Rock Salt",
-            color: "white",
-            textDecoration: "none",
-          }}
-        >
+      <nav className={menuOpen ? "link open" : "link"}>
+        <a href="#home" className="header Home">
           Home
         </a>
-        <a
-          href="#work"
-          className="header Home"
-          style={{
-            fontFamily: "Rock Salt",
-            color: "white",
-            textDecoration: "none",
-          }}
-        >
+        <a href="#work" className="header Home">
           Project
         </a>
-        <a
-          href="#certificate"
-          className="header Home"
-          style={{
-            fontFamily: "Rock Salt",
-            color: "white",
-            textDecoration: "none",
-          }}
-        >
+        <a href="#certificate" className="header Home">
           Certificate
         </a>
-        <a
-          href="#contact"
-          className="header Home"
-          style={{
-            fontFamily: "Rock Salt",
-            color: "white",
-            textDecoration: "none",
-          }}
-        >
+        <a href="#contact" className="header Home">
           Contact
         </a>
       </nav>

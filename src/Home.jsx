@@ -98,7 +98,14 @@ const Home = () => {
           I'm a Software Engineer at Addis ababa univercity,skilled in Web and
           Mobile App Development.
         </h3>
-        <button className="getInTouch">Get in touch</button>
+        <button className="getInTouch">
+          Get in touch
+          <i className="  fas fa-phone"></i>
+        </button>
+        <a href="/Hana-Melese-CV.pdf" download className="downloadCV">
+          Download CV <i className="fas fa-download"></i>
+        </a>
+
         <div
           className="icons"
           style={{

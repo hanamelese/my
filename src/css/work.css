@@ -1,64 +1,79 @@
+*{
+  margin: 0;
+  padding: 0;
+}
 .project {
   display: flex;
-  /* grid-template-columns: repeat(3, 1fr); */
-  /* gap: 20px; */
- flex-wrap: wrap;
+  flex-wrap: wrap;
+  justify-content: center; /* center items on all screens */
+  gap: 10px; 
 }
 
 .project a img {
-  width: 300px;
-  height: 200px;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  aspect-ratio: 3 / 2; /* keeps 300x200 shape */
   border-radius: 20px;
-  margin-right: 50px;
-  margin-bottom: 50px;
   box-shadow: 
     0 0 5px rgb(188, 190, 190),
     0 0 2px rgb(45, 50, 50),
     0 0 5px rgb(188, 244, 244);
+  transition: transform 0.3s ease; /* smooth hover */
 }
 
-.project a img:hover{
-    transform: scale(1.01);
-    animation: flip 1s ease-in-out;
+.project a img:hover {
+  transform: scale(1.02);
+  animation: flip 0.5s ease-in-out;
 }
 
- @keyframes flip{
-    from{ transform:rotate(0deg) ;}
-    to{transform:rotate(10deg);
- }}
+@keyframes flip {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(10deg); }
+}
 
+/* restful container */
 .restful {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap; 
- 
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px; /* space between cards */
+  margin: 20px;
 }
 
+/* restful cards */
 .restful2 {
+  background-color: #121a2f;
   border: 0.5px solid white;
   border-radius: 20px;
-  margin: 20px; /* reduced for smaller screens */
+  width: 300px;
+  flex: 1 1 250px; /* grow/shrink, min width 250px */
   text-align: center;
-  background-color: #121a2f;
-  width: 310px;
-  flex: 1 1 250px; /* allow to shrink/grow, min width 250px */
+  margin: 10px;
+  padding: 10px;
 }
 
+/* images inside restful cards */
 .restful2 img {
-  margin: 5px;
+  width: 100%;
+  max-width: 280px;
+  margin: 5px auto;
+  border-radius: 10px;
 }
 
+/* skills container */
 .skills {
   display: flex;
-  justify-content: space-between;
-  margin: 0 50px;
+  flex-wrap: wrap;
+  justify-content: center; /* center on all screens */
+  gap: 15px;
   border: 1px solid white;
   border-radius: 30px;
-  flex-wrap: wrap; /* allow images to wrap on smaller screens */
-  padding: 10px;
-  gap: 10px;
+  padding: 10px 20px;
+  margin: 20px;
 }
 
+/* skills icons */
 .skills img {
   border-radius: 50%;
   width: 70px;
@@ -66,34 +81,27 @@
 }
 
 .skills img:hover {
-  transform: rotate(5deg);
+  transform: rotate(5deg) scale(1.05);
 }
 
 /* ✅ Responsive styles */
 @media (max-width: 768px) {
-  .restful {
-    flex-direction: column;
-    align-items: center;
-    margin: 10px;
-  }
-
-  .restful2 {
-    width: 90%; 
-    margin: 10px 0;
-  }
-
-  .skills {
-    justify-content: center;
-    margin: 0 20px;
+  .project a img {
+    max-width: 250px;
   }
 
   .skills img {
-    width: 60px; 
+    width: 60px;
   }
 }
 
 @media (max-width: 480px) {
+  .project a img {
+    max-width: 200px;
+  }
+
   .skills img {
     width: 50px;
   }
 }
+

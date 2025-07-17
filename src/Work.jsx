@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import "./css/work.css";
 import photo from "./assets/charity.png";
@@ -12,8 +12,32 @@ import reserve from "./assets/reserve.jpg";
 import html from "./assets/html.png";
 import css from "./assets/css.jpg";
 import js from "./assets/js.jpg";
-
+import crop from "./assets/crop.png";
 const Work = () => {
+  useEffect(() => {
+    const handleScroll = () => {
+      const projectSection = document.querySelector(".project");
+      const skillsSection = document.querySelector(".skills");
+      const triggerPoint = window.innerHeight / 1.3;
+
+      if (projectSection) {
+        const projectTop = projectSection.getBoundingClientRect().top;
+        if (projectTop < triggerPoint) {
+          projectSection.classList.add("active");
+        }
+      }
+
+      if (skillsSection) {
+        const skillsTop = skillsSection.getBoundingClientRect().top;
+        if (skillsTop < triggerPoint) {
+          skillsSection.classList.add("active");
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
     <>
       <h1
@@ -25,7 +49,7 @@ const Work = () => {
       >
         Sample Works
       </h1>
-      <div style={{ marginLeft: "10%" }} className="project">
+      <div className="project">
         <div className="restful">
           <div className="restful2">
             {" "}
@@ -35,6 +59,18 @@ const Work = () => {
             <h2>Charity Organisation</h2>
             <h3>Used frameworks:</h3>react and firebase
           </div>
+
+          <div className="restful2">
+            <a href="https://crop-recomendationgit-menuvgsa3gy8ddxp5e7538.streamlit.app/">
+              <img src={crop}></img>
+            </a>
+
+            <h2>Ecomerce-Api</h2>
+            <h5>
+              <b>Used frameworks</b>:flask,python
+            </h5>
+          </div>
+
           <div className="restful2">
             <a href="https://github.com/hanamelese/Ecommerce-api.git">
               <img src={ecomerce}></img>

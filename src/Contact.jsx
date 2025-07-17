@@ -1,7 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import emailjs from "emailjs-com";
-import {} from "react-vertical-timeline-component";
-import "react-vertical-timeline-component/style.min.css";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -38,6 +36,36 @@ const Contact = () => {
       );
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const triggerPoint = window.innerHeight * 0.8; // trigger a bit earlier
+
+      const formSection = document.getElementById("formSection");
+      const infoSection = document.getElementById("infoSection");
+
+      if (
+        formSection &&
+        formSection.getBoundingClientRect().top < triggerPoint
+      ) {
+        formSection.style.opacity = "1";
+        formSection.style.transform = "translateX(0)";
+      }
+
+      if (
+        infoSection &&
+        infoSection.getBoundingClientRect().top < triggerPoint
+      ) {
+        infoSection.style.opacity = "1";
+        infoSection.style.transform = "translateX(0)";
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // trigger once on mount
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div style={{ padding: "60px 10%", fontFamily: "Poppins, sans-serif" }}>
       <h1
@@ -49,19 +77,37 @@ const Contact = () => {
         Contact & Feedback
       </h1>
 
-      <div style={{ display: "flex", flexWrap: "wrap", gap: "70px" }}>
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          gap: "70px",
+          justifyContent: "space-between",
+        }}
+      >
         {/* === Feedback Form === */}
-        <div style={{ flex: 1, minWidth: "300px" }}>
+        <div
+          id="formSection"
+          style={{
+            flex: 1,
+            minWidth: "300px",
+            opacity: 0,
+            transform: "translateX(-100px)",
+            transition: "all 1s ease",
+            willChange: "opacity, transform",
+            background: "#121a2f",
+            padding: "30px",
+            borderRadius: "20px",
+            boxShadow:
+              "0 4px 10px rgba(30,0,0,0.3), 0 4px 10px rgba(0,0,0,0.3)",
+          }}
+        >
           <form
             onSubmit={handleSubmit}
             style={{
               display: "flex",
               flexDirection: "column",
               gap: "15px",
-              background: "#121a2f",
-              padding: "30px",
-              borderRadius: "20px",
-              boxShadow: "0 4px 10px rgba(30,0,0,10),0 4px 10px rgba(0,0,10,1)",
             }}
           >
             <label>Name:</label>
@@ -113,7 +159,6 @@ const Contact = () => {
               type="submit"
               style={{
                 padding: "10px",
-
                 border: "none",
                 marginTop: "25px",
                 background: "#A4CCD9",
@@ -134,8 +179,20 @@ const Contact = () => {
           )}
         </div>
 
-        {/* === Timeline Animation === */}
-        <div style={{ flex: 1, minWidth: "300px" }}>
+        {/* === Info Section === */}
+        <div
+          id="infoSection"
+          style={{
+            flex: 1,
+            minWidth: "300px",
+            opacity: 0,
+            transform: "translateX(100px)",
+            transition: "all 1s ease",
+            willChange: "opacity, transform",
+            color: "white",
+            fontSize: "1rem",
+          }}
+        >
           <h3>Full Name</h3>
           <p>Hana Melese</p>
 
@@ -156,25 +213,20 @@ const Contact = () => {
               marginTop: "100px",
             }}
           >
-            <a href="https://github.com/hanamelese">
+            <a href="https://github.com/hanamelese" style={{ color: "white" }}>
               <i className="fab fa-github"></i>
             </a>
 
-            <a href="https://t.me/hanitta111996">
+            <a href="https://t.me/hanitta111996" style={{ color: "white" }}>
               <i className="fab fa-telegram"></i>
             </a>
 
-            <a href="https://www.linkedin.com/in/hana-melese-103520339/">
+            <a
+              href="https://www.linkedin.com/in/hana-melese-103520339/"
+              style={{ color: "white" }}
+            >
               <i className="fab fa-linkedin"></i>
             </a>
-
-            {/* <a href="https://www.instagram.com/ktab_pictures?igsh=cXJtc3pwZzU5ZXk=">
-            <i className="fas fa-camera"></i>
-          </a> */}
-
-            {/* <a href="https://www.youtube.com/@GeorgeNegative">
-            <i className="fab fa-youtube"></i>
-          </a> */}
           </div>
         </div>
       </div>

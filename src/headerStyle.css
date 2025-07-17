@@ -1,36 +1,114 @@
-
-*{
-    margin:0;
-    padding: 0;
-    
-}
-header{
-    padding-left: 10%;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-   
-    border-bottom: 0.5px solid rgb(129, 156, 172);
+* {
+  margin: 0;
+  padding: 0;
 }
 
- .header{
-    padding-right: 5%;
-
- }
-
- @keyframes spin{
-    from{ transform:rotate(0deg) ;}
-    to{transform:rotate(360deg);
-    box-shadow: 0 0 1px rgba(237, 202, 155, 0.8), 0 0 2px rgba(249, 252, 252, 0.5);}
- }
-.spin-slow{
-   animation: spin 1s ease-in-out;
+header {
+  position: fixed;
+  width: 100%;
+  background-color: black;
+  z-index: 999;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.5px solid rgb(129, 156, 172);
+  /* margin-right:  500px; */
+  
 }
 
-a{
-color: rgb(212, 232, 249);
-text-decoration: none;
-font-family: Georgia, 'Times New Roman', Times, serif;
+/* Burger button */
+.burger {
+  display: none; /* hidden on desktop */
+  cursor: pointer;
+  flex-direction: column;
+  gap: 4px;
+  padding: 5px;
 }
-a:hover{
-color: rgb(94, 115, 125);
+
+.burger .line {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+/* Animate burger to X */
+.burger .rotate1 {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger .fade {
+  opacity: 0;
+}
+
+.burger .rotate2 {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Nav links */
+.link {
+  display: flex;
+  gap: 35px;
+  margin-right: 150px;
+ font-family: 'Dancing Script', cursive;
+ font-size: 13px;
+}
+
+/* .header {
+  padding-right: 5%;
+} */
+
+.link a {
+  color: rgb(212, 232, 249);
+  text-decoration: none;
+  font-family: 'Rock Salt', cursive;
+}
+
+a:hover {
+  color: rgb(94, 115, 125);
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg);
+    box-shadow: 0 0 1px rgba(237, 202, 155, 0.8), 0 0 2px rgba(249, 252, 252, 0.5);
+  }
+}
+
+.spin-slow {
+  animation: spin 1s ease-in-out;
+}
+
+/* ✅ Responsive styles */
+@media (max-width: 668px) {
+  .burger {
+   margin-right: 30px;
+    display: flex; 
+  }
+
+  .link {
+   /* margin-right: 40px; */
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: black;
+    flex-direction: column;
+    width: 200px;
+    padding: 10px;
+    display: none;
+    border-bottom: 1px solid white;
+    align-items: center;
+  }
+
+  .link.open {
+    display: flex;
+  }
+
+  .link a {
+    padding: 10px 0;
+    text-align: right;
+  }
 }
