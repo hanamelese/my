@@ -2,6 +2,9 @@ import React from "react";
 
 import "./css/work.css";
 import photo from "./assets/charity.png";
+import menu from "./assets/DigitalMenu.png";
+import pdf from "./assets/Pdf.png";
+
 import flutter from "./assets/flutter.png";
 import react from "./assets/react.png";
 import node from "./assets/node.jpg";
@@ -29,14 +32,44 @@ const Work = () => {
       </h1>
       <div className="project">
         <div className="restful">
+
+<div className="restful2">
+            {" "}
+            <a href="https://habesha-trails.web.app">
+              <img src={menu}></img>
+            </a>
+            <h2>Digital Menu</h2>
+            <h3>Used frameworks:</h3>react and supabase
+            <h4>Built a restaurant ordering system with separate admin and customer interfaces. Admins manage menus and orders, while customers browse the menu and place orders online.</h4>
+          </div>
+
+
+
+ <div className="restful2">
+            {" "}
+            <a href="https://pdf-reader-three-weld.vercel.app/">
+              <img src={pdf}></img>
+            </a>
+            <h2>Pdf Reader</h2>
+            <h3>Used frameworks:</h3>react and firebase
+            <h4> A web app that enables users to edit compress,convert,merge and bundle files.</h4>
+          </div>
+
+
+
           <div className="restful2">
             {" "}
             <a href="https://charity-organization-637f0.firebaseapp.com/">
               <img src={photo}></img>
             </a>
             <h2>Charity Organisation</h2>
-            <h3>Used frameworks:</h3>react and firebase
+            <h3>Used frameworks:</h3>react and nodejs
           </div>
+
+
+         
+
+          
 
           <div className="restful2">
             <a href="https://crop-recomendationgit-menuvgsa3gy8ddxp5e7538.streamlit.app/">
