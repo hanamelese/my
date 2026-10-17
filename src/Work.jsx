@@ -4,7 +4,8 @@ import "./css/work.css";
 import photo from "./assets/charity.png";
 import menu from "./assets/DigitalMenu.png";
 import pdf from "./assets/Pdf.png";
-
+import photo1 from "./assets/repo-analyzer.png";
+import workspace from "./assets/workspace.png"
 import flutter from "./assets/flutter.png";
 import react from "./assets/react.png";
 import node from "./assets/node.jpg";
@@ -33,6 +34,7 @@ const Work = () => {
       <div className="project">
         <div className="restful">
 
+          
 <div className="restful2">
             {" "}
             <a href="https://habesha-trails.web.app">
@@ -42,6 +44,27 @@ const Work = () => {
             <h3>Used frameworks:</h3>react and supabase
             <h4>Built a restaurant ordering system with separate admin and customer interfaces. Admins manage menus and orders, while customers browse the menu and place orders online.</h4>
           </div>
+<div className="restful2">
+            {" "}
+            <a href="https://ai-powered-repository-analyzer.vercel.app/">
+              <img src={photo1}></img>
+            </a>
+            <h2>AI-powered-repository-analyzer</h2>
+            <h3>Used frameworks:</h3>Next.js,Tailwindcss,Openai,Type script
+          </div>
+
+          <div className="restful2">
+            {" "}
+            <a href="https://real-time-colaborative-workspace-1suw8vn0k-hanameleses-projects.vercel.app/">
+              <img src={workspace}></img>
+            </a>
+            <h2>Collaborative workspace</h2>
+            <h3>Used frameworks:</h3>
+            <h4>Frontend:</h4>Next.js,Tailwindcss,,Type script
+            <h4>Backend:</h4> Rust
+          </div>
+
+
 
 
 
@@ -76,7 +99,7 @@ const Work = () => {
               <img src={crop}></img>
             </a>
 
-            <h2>Netflix</h2>
+            <h2>AI-Agri chat bot</h2>
             <h5>
               <b>Used frameworks</b>:flask,python
             </h5>
@@ -87,7 +110,7 @@ const Work = () => {
               <img src={netflix}></img>
             </a>
 
-            <h2>Resume Builder</h2>
+            <h2>Netflix Clone</h2>
             <h5>
               <b>Used frameworks</b>:React,TMDB-api
             </h5>
@@ -98,7 +121,7 @@ const Work = () => {
               <img src={resume}></img>
             </a>
 
-            <h2>Ecomerce-Api</h2>
+            <h2>Resume Builder</h2>
             <h5>
               <b>Used frameworks</b>:flask,python
             </h5>
