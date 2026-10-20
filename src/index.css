@@ -1,14 +1,18 @@
- *{
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
- :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+
+:root {
+  font-family: 'Poppins', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  /* Increased base font size from default 16px to 18px to make everything larger */
+  line-height: 1.6;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(227, 226, 226, 0.87);
+  color-scheme: dark;
+  color: rgba(227, 226, 226, 0.95);
   background-color: #000000;
 
   font-synthesis: none;
@@ -17,3 +21,8 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  background-color: #000000;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
