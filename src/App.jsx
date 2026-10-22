@@ -3,6 +3,7 @@ import Home from "./Home";
 import Certificate from "./Certificate";
 import Work from "./Work";
 import Contact from "./Contact";
+import Experience from "./Experience";
 
 function App() {
   return (
@@ -17,6 +18,10 @@ function App() {
       <section id="certificate">
         <Certificate />
       </section>
+      <section id="experience">
+        <Experience />
+      </section>
+      
       <section id="contact">
         <Contact />
       </section>

@@ -21,7 +21,7 @@ const Header = () => {
         <img
           src={camera2}
           className={spinning ? "spin-slow" : ""}
-          style={{ height: "38px", width: "45px", borderRadius: "50%" }}
+          style={{ height: "48px", width: "55px", borderRadius: "50%" ,marginLeft: "38px",}}
           alt="logo"
         />
         <div
@@ -30,9 +30,10 @@ const Header = () => {
             letterSpacing: "3px",
             marginLeft: "8px",
             color: "white",
+            fontSize: "32px",
           }}
         >
-          <span style={{ color: "red", fontSize: "22px" }}>H</span>ana
+          <span style={{ color: "red", fontSize: "42px" }}>H</span>ana
         </div>
       </div>
 
@@ -53,6 +54,9 @@ const Header = () => {
         </a>
         <a href="#certificate" className="header Home">
           Certificate
+        </a>
+        <a href="#experience" className="header Home">
+          Experience
         </a>
         <a href="#contact" className="header Home">
           Contact
